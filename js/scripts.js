@@ -1,7 +1,7 @@
 (function ($) {
     
     wrapper = $('body');
-    el = wrapper.find('.mobile'); 
+    el = wrapper.find('.mobile'); //careful with classes here
     act = el.children().children();
     act.children().not('a').hide();
     act.click(function() {
@@ -17,13 +17,13 @@
     });
    
    
-    var target = document.getElementsByTagName('body');
+    //var target = document.getElementsByTagName('body');
     var check = {any:function(){
        return navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i);
     }};
     if(check.any()) {
         $('nav').css('position', 'relative');
-        lnt = $(".tch");
+        lnt = $(".tch"); // careful with classes here
         lnt.bind("click.a", function(event) {
           event.preventDefault();
           $(this).unbind(".a");
@@ -38,7 +38,7 @@
         });
     };
 
-   
+    // careful with .bind here - on body
     var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
     $('body').bind(mousewheelevt, function(e){
 
@@ -85,8 +85,35 @@
 
     addSwipeListener(document.body);
     
-    // random pick, never repeat on each slot
     
+    // --- random pick, never repeat on each slot ---
+    
+    
+    /*-- ARRAY MADE FROM XML FEED 
+    
+    if (window.XMLHttpRequest)
+      {  xmlhttp=new XMLHttpRequest();  }
+    else
+      {  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");  }
+
+    xmlhttp.open("GET","feed.xml",false);
+    xmlhttp.send();
+    xmlDoc=xmlhttp.responseXML; 
+
+    var x=xmlDoc.getElementsByTagName("EACHFEED");
+    var ads = [];
+    for (i=0; i < x.length; i++)
+      {
+      var tit = x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue,
+          uri = x[i].getElementsByTagName("URL")[0].childNodes[0].nodeValue,
+          imm = x[i].getElementsByTagName("IMG")[0].childNodes[0].nodeValue,
+          loc = x[i].getElementsByTagName("LOCATION")[0].childNodes[0].nodeValue;
+          ads.push('<a href=" ' + uri + ' "><img src=" ' + imm + ' " alt="" /><b>' + tit + '</b><p>' + loc + '</p></a>');
+      };
+      
+      **/
+    
+    // fast example array
     var ads = ['<div>1</div>', '<div>2</div>', '<div>3</div>', '<div>4</div>', '<div>5</div>', '<div>6</div>', '<div>7</div>', '<div>8</div>', '<div>9</div>', '<div>10</div>', '<div>11</div>', '<div>12</div>', '<div>13</div>', '<div>14</div>', '<div>15</div>'];
     
     $.fn.loadAds = function( ads, interval ) {  
@@ -94,6 +121,7 @@
             var item = $(this);
             item.fadeOut( 'slow', function() {                
  
+                // fisher-yates algorithm             
                 Array.prototype.shuffle = function() {   
                         var a = this,
                             n = a.length;
