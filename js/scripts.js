@@ -1,5 +1,9 @@
 (function ($) {
     
+    // start of contents
+    
+    // THIS IS THE TOGGLING MENU
+    
     wrapper = $('body');
     el = wrapper.find('.mobile'); //careful with classes here
     act = el.children().children();
@@ -16,7 +20,9 @@
         }
     });
    
-   
+    
+    // THIS IS THE MOBILE CHECK AND PSEUDO HOVER FOR SELECTED LINKS 
+     
     //var target = document.getElementsByTagName('body');
     var check = {any:function(){
        return navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i);
@@ -37,6 +43,8 @@
            }
         });
     };
+    
+    // THIS IS THE SHOW-MENU ON SCROLLING UPWARD 
 
     // careful with .bind here - on body
     var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
@@ -54,6 +62,8 @@
         }   
     });
 
+
+    // THIS IS THE SHOW-MENU WHEN SWIPING UPWARD
 
     // detect upward downward swipe
     function addSwipeListener(el, listener){
@@ -86,7 +96,7 @@
     addSwipeListener(document.body);
     
     
-    // --- random pick, never repeat on each slot ---
+    // THIS IS THE RANDOM PICKER OF ELEMENTS
     
     
     /*-- ARRAY MADE FROM XML FEED 
