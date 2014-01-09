@@ -154,7 +154,7 @@
     };
 
     $(document).ready(function() {
-          $('#shuffle').loadAds( ads, 5000 ); 
+          $('#shuffle').loadAds( ads, 5000 ); // shuffle every 5 sec
     });
 
 
