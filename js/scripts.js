@@ -142,7 +142,7 @@
                             a[i] = a[j];
                             a[j] = tmp;
                         }
-                        return a.slice(0,5);
+                        return a.slice(0,5); // history required for advanced options
                 }
                item.empty().append(ads.shuffle());
                item.fadeIn( 'slow' );
