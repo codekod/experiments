@@ -67,7 +67,7 @@
 
     // detect upward downward swipe
     function addSwipeListener(el, listener){
-        var startY;
+        var startY; // X for horizontal
         var distance;
         var direction;
 
@@ -87,6 +87,7 @@
             }
             if (Math.abs(distance) > 15) {
                 c = 10;
+                // upward + : + downward
                 listener({ target: el, direction: distance > 0 ? '' + $('body').addClass('m_open') + '' : '' + $('#nav').removeClass('m_open') + '' });
             }
         };
