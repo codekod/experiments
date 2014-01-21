@@ -1,6 +1,7 @@
 * {margin:0; padding:0;}
 ul, ol {list-style:none}
 body div * {overflow:hidden}
+html,body {height:100%}
 
 body {font-size:62.5%; font-family: Arial, Helvetica, Sans-serif; margin-top:100px}
 nav {width:100%; background:#444; position:fixed; top:0; left:0;}
@@ -10,6 +11,7 @@ nav ul li ul li a {background:#222; padding-left:15px}
 nav ul li ul li a:hover {background:#111} 
 nav ul li.open {background:DarkCyan}
 
+.cont {height:100%}
 .cont > a {background:#333; padding:5px; display:inline-block; color:#fff; text-decoration:none; font-size:14px; margin:10px; transition: all 120ms ease-out}
 .cont > a:hover, .cont > a.focus {background:DarkCyan; padding-right:10px}
 
@@ -19,5 +21,9 @@ nav.m_open {position:fixed !important}
 
 #shuffle > div {border:2px solid #ccc; background:#eee; font-size:16px; margin:10px; padding:5px; width:320px}
 
+.img img.small {width:150px}
+.img img.medium {width:300px}
+.img img.big {width:600px}
 
+#right-sidebar {position:relative; float:right; overflow:hidden; background:#ccc;height:500px; margin:0 0 0 10px; padding:10px;}
 
