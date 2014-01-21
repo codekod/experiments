@@ -1,5 +1,7 @@
-(function ($) {
-    
+
+define(["jquery", "jquery.easing"], function($) {
+    $(function() {
+
     // start of contents
     
     // THIS IS THE TOGGLING MENU
@@ -157,8 +159,54 @@
     $(document).ready(function() {
           $('#shuffle').loadAds( ads, 5000 ); // shuffle every 5 sec
     });
-
-
-
     
-})(jQuery);
+    // set classes to img based on width
+
+    function setClasses(image) {
+
+                if (!$(image).width()) {
+
+                    $(image).load(function(){
+                        setClasses(this);
+                    });
+
+                    return;
+                }
+
+                if ($(image).width() < 300 * 0.85) {
+                    $(image).addClass('small');
+                }
+
+                if ($(image).width() > 300 * 0.85) {
+                    $(image).addClass('medium');
+                }
+
+                if ($(image).width() > 600 * 0.85) {
+                    $(image).addClass('big');
+                }
+            }        
+
+            $('.img img').each(function() {
+                setClasses(this);
+    });
+        
+        
+    // switchImage ease
+
+    function switchImg() {
+            var $last = $('.pics a:last');
+            $last.find('img').fadeOut(900, 'jswing', function() {
+                $last.prependTo('.pics');
+                $last.find('img').fadeIn();
+            });
+        }
+        
+    var switchem = setInterval( switchImg, 6000 );      
+    
+    // scroll sidebar
+    $(window).scroll(function() {
+        $('#right-sidebar').animate({ top: $(window).scrollTop() + "px" }, { queue: false, duration: 500}, "fast");
+    });
+
+    });
+});
