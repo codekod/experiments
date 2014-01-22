@@ -1,5 +1,4 @@
-
-define(["jquery", "jquery.easing"], function($) {
+define(["jquery", "jquery.easing", "echo"], function($) {
     $(function() {
 
     // start of contents
@@ -207,6 +206,12 @@ define(["jquery", "jquery.easing"], function($) {
     $(window).scroll(function() {
         $('#right-sidebar').animate({ top: $(window).scrollTop() + "px" }, { queue: false, duration: 500}, "fast");
     });
+    
+    // lazy load images echojs by toddmotto
+    Echo.init({
+          offset: 0,
+          throttle: 250
+    });    
 
-    });
+  });
 });
