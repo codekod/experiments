@@ -5,6 +5,7 @@ requirejs.config({
     "baseUrl": "js",
     "paths": {
       "jquery": "jquery.1.8.2.min",
+      "echo": "echo",      
       "jquery.easing": "jquery.easing.1.3"      
     },
     "shim": {
