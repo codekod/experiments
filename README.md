@@ -16,3 +16,4 @@ New:
 - onScroll sidebar
 - Switch images with jquery.easing
 - Add class to images based on width
+- Echojs for img lazy load added
