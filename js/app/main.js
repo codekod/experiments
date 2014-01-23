@@ -212,6 +212,60 @@ define(["jquery", "jquery.easing", "echo"], function($) {
           offset: 0,
           throttle: 250
     });    
+    
+    
+    // isyslider - pass width of thumbs, height of thumbs and num of elements to show
+    $.fn.isyslider = function(w, h, n) {
+        return this.each( function(index, item) {
+                
+                // structure and gfx
+                var main = $(this);
+                var target = $(this).children();
+                target.first().before(target.last());
+                var tl = target.length;
+                var cls = main.attr('class');
+                target.wrapAll('<div class="' + cls + '_slide" />');
+                target.parent().wrapAll('<div class="' + cls + '_cont" />');
+                var slider = target.parent();
+                var wrapper = slider.parent();
+                target.css({'background':'#333', 'margin':'0 1px', 'float':'left', 'display':'block', 'width':'' + w + 'px', 'height':'' + h + 'px'});
+                target.children().css({'width':'100%', 'height':'auto'});
+                wrapper.parent().prepend('<div class="' + cls + '_prev">‹</div>');
+                wrapper.parent().append('<div class="' + cls + '_next">›</div>');
+                var prev = main.children().first();
+                var next = main.children().last();  
+                var wd = (n * 2) + (n * w);
+                var sw = (tl * w) + (tl * 2);
+                var tw = target.outerWidth() * (-1);
+                prev.css({'width':'40px', 'height':'' + h + 'px', 'text-align':'center', 'line-height':'' + h + 'px', 'cursor':'pointer', 'float':'left'});
+                next.css({'width':'40px', 'height':'' + h + 'px', 'text-align':'center', 'line-height':'' + h + 'px', 'cursor':'pointer'});
+                wrapper.css({'float':'left', 'width':'' + wd + 'px', 'height':'' + h + 'px', 'position':'relative'});
+                slider.css({'left': '-' + (w + 2 ) + 'px', 'top':'0', 'width':'' + sw + 'px', 'height':'' + h + 'px', 'position':'absolute'});
+                // functions
+                prev.click(function() {
+                        var indent = parseInt(slider.css('left')) + target.outerWidth();
+                        slider.animate({'left' : indent}, 200,function(){    
+                                $('.' + cls + '_slide > *:first').before($('.' + cls + '_slide > *:last'));           
+                                slider.css({'left' : tw - 2});
+                        });
+                        return false;
+                });
+                next.click(function() {
+                        //main.css({'border':'1px solid #f0f'});
+                        var indent = parseInt(slider.css('left')) - target.outerWidth();
+                        slider.animate({'left' : indent}, 200,function(){    
+                                $('.' + cls + '_slide > *:last').after($('.' + cls + '_slide > *:first'));           
+                                slider.css({'left' : tw - 2});
+                        });
+                        return false;
+                });
+                
+
+            });
+        };
+        
+        $('.slider_one').isyslider(100, 100, 3);
+        $('.slider_two').isyslider(140, 140, 2);
 
   });
 });
