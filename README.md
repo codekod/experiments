@@ -17,3 +17,8 @@ New:
 - Switch images with jquery.easing
 - Add class to images based on width
 - Echojs for img lazy load added
+
+New:
+
+- Simple slide to pics added (use different classes for container), 
+- (from above) List elements or anchors directly into container (ul for li).
