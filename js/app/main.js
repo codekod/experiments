@@ -223,7 +223,7 @@ define(["jquery", "jquery.easing", "echo"], function($) {
                 var target = $(this).children();
                 target.first().before(target.last());
                 var tl = target.length;
-                var cls = main.attr('class');
+                var cls = main.attr('id');
                 target.wrapAll('<div class="' + cls + '_slide" />');
                 target.parent().wrapAll('<div class="' + cls + '_cont" />');
                 var slider = target.parent();
@@ -265,8 +265,8 @@ define(["jquery", "jquery.easing", "echo"], function($) {
         };
         
         // assign function and values
-        $('.slider_one').isyslider(100, 100, 3);
-        $('.slider_two').isyslider(140, 140, 2);
+        $('#slider_one').isyslider(100, 100, 3);
+        $('#slider_two').isyslider(140, 140, 2);
 
   });
 });
