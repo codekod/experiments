@@ -159,7 +159,7 @@ define(["jquery", "jquery.easing", "echo"], function($) {
           $('#shuffle').loadAds( ads, 5000 ); // shuffle every 5 sec
     });
     
-    // set classes to img based on width
+    // THIS sets classes to img based on width
 
     function setClasses(image) {
 
@@ -190,7 +190,7 @@ define(["jquery", "jquery.easing", "echo"], function($) {
     });
         
         
-    // switchImage ease
+    // THIS SWITCHES IMAGES WITH JQUERY EASING 
 
     function switchImg() {
             var $last = $('.pics a:last');
@@ -202,19 +202,19 @@ define(["jquery", "jquery.easing", "echo"], function($) {
         
     var switchem = setInterval( switchImg, 6000 );      
     
-    // scroll sidebar
+    // THIS IS THE FIXED SIDEBAR ON SCROLL
     $(window).scroll(function() {
         $('#right-sidebar').animate({ top: $(window).scrollTop() + "px" }, { queue: false, duration: 500}, "fast");
     });
     
-    // lazy load images echojs by toddmotto
+    // THIS IS lazy load images echojs by toddmotto
     Echo.init({
           offset: 0,
           throttle: 250
     });    
     
     
-    // isyslider - pass width of thumbs, height of thumbs and num of elements to show
+    // THIS IS isyslider - pass width of thumbs, height of thumbs and num of elements to show
     $.fn.isyslider = function(w, h, n) {
         return this.each( function(index, item) {
                 
@@ -264,6 +264,7 @@ define(["jquery", "jquery.easing", "echo"], function($) {
             });
         };
         
+        // assign function and values
         $('.slider_one').isyslider(100, 100, 3);
         $('.slider_two').isyslider(140, 140, 2);
 
