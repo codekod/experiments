@@ -20,5 +20,5 @@ New:
 
 New:
 
-- Simple slide to pics added (use different classes for container), 
-- (from above) List elements or anchors directly into container (ul for li).
+- Simple slide to pics added (use id for containers), 
+- (from above) List elements or anchors directly into container (ul# for li).
