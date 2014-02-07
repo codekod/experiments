@@ -1,6 +1,3 @@
-// Place third party dependencies in the lib folder
-//
-// Configure loading modules from the lib directory,
 requirejs.config({
     "baseUrl": "js",
     "paths": {
