@@ -1,7 +1,7 @@
 define(["jquery", "jquery.easing", "echo"], function($) {
     $(function() {
 
-    // start of contents
+    // start of contents as jQuery dependancy
     
     // THIS IS THE TOGGLING MENU
     
