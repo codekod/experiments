@@ -213,8 +213,7 @@ define(["jquery", "jquery.easing", "echo"], function($) {
           throttle: 250
     });    
     
-    
-    // THIS IS isyslider - pass width of thumbs, height of thumbs and num of elements to show
+    // THIS IS isyslider (old) - pass width of thumbs, height of thumbs and num of elements to show
     $.fn.isyslider = function(w, h, n) {
         return this.each( function(index, item) {
                 
