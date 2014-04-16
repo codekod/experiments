@@ -20,5 +20,4 @@ New:
 
 New:
 
-- Simple slide to pics added (use id for containers), 
-- (from above) List elements or anchors directly into container (ul# for li).
+- Simple slide to pics added (updates in isyslider repo)
